@@ -1,5 +1,21 @@
+import { Routes, Route, Link } from 'react-router';
+import Home from './components/pages/Home.jsx';
+import Contact from './components/pages/Contact.jsx';
+
 export default function App() {
   return(
-    <h1 className="text-4xl font-bold text-primary flex justify-center items-center h-screen">Hello, World!</h1>
+    <div>
+      <nav className="bg-primary p-4">
+        <div className="flex gap-4 justify-center">
+          <Link to="/" className="text-white hover:underline">Home</Link>
+          <Link to="/contact" className="text-white hover:underline">Contact</Link>
+        </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
   );
 }
