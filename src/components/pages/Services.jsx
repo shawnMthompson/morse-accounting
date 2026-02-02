@@ -32,7 +32,7 @@ export default function Services() {
               <ul className="space-y-2 text-dark/80 dark:text-light/80">
                 {service.highlights.map((item) => (
                   <li key={item} className="flex items-center gap-2">
-                    <span className="inline-block h-2 w-2 rounded-full bg-secondary" />
+                    <span className="inline-block h-2 w-2 rounded-full bg-secondary relative top-[1.5px]" />
                     <span>{item}</span>
                   </li>
                 ))}

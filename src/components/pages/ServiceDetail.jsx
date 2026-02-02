@@ -50,7 +50,7 @@ export default function ServiceDetail() {
               <ul className="space-y-3 text-dark/80 dark:text-light/80">
                 {service.details.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="mt-2 inline-block h-2 w-2 rounded-full bg-secondary" />
+                    <span className="mt-2 inline-block h-2 w-2 rounded-full bg-secondary relative top-[1.5px]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -64,7 +64,7 @@ export default function ServiceDetail() {
               <ul className="grid gap-3 md:grid-cols-2 text-dark/80 dark:text-light/80">
                 {service.highlights.map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <span className="inline-block h-2 w-2 rounded-full bg-primary" />
+                    <span className="inline-block h-2 w-2 rounded-full bg-primary relative top-[1.5px]" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -82,7 +82,7 @@ export default function ServiceDetail() {
               </p>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-accent transition-all"
+                className="inline-flex items-center justify-center w-full px-6 py-3 rounded-lg bg-primary text-white font-semibold hover:bg-accent transition-all duration-200 transform hover:scale-[1.02] shadow-md hover:shadow-lg"
               >
                 Contact Us
               </Link>
