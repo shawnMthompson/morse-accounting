@@ -7,6 +7,47 @@ import { FaLongArrowAltRight, FaStar } from "react-icons/fa";
 export default function Home() {
     return (
         <div>
+            <section className="py-16 lg:py-24 bg-linear-to-b from-light/30 to-white dark:from-dark dark:to-accent/20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="order-2 lg:order-1">
+                            <h2 className="text-3xl lg:text-4xl text-primary dark:text-secondary mb-6">
+                                Meet Your Trusted Tax Professional
+                            </h2>
+                            <p className="text-lg text-dark/80 dark:text-light/80 mb-4">
+                                With over 35 years of experience in accounting and tax preparation, I'm dedicated to 
+                                helping small businesses succeed through sound financial management.
+                            </p>
+                            <p className="text-lg text-dark/80 dark:text-light/80 mb-6">
+                                My approach is simple: understand your unique business needs, provide personalized solutions, 
+                                and maintain the highest standards of integrity and professionalism.
+                            </p>
+                            <div className="space-y-3">
+                                <div className="flex items-center">
+                                    <div className="w-2 h-2 bg-secondary rounded-full mr-3"></div>
+                                    <span className="text-dark/80 dark:text-light/80">Certified Public Accountant (CPA)</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="w-2 h-2 bg-secondary rounded-full mr-3"></div>
+                                    <span className="text-dark/80 dark:text-light/80">35+ Years of Experience</span>
+                                </div>
+                                <div className="flex items-center">
+                                    <div className="w-2 h-2 bg-secondary rounded-full mr-3"></div>
+                                    <span className="text-dark/80 dark:text-light/80">1000+ Satisfied Clients</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="order-1 lg:order-2">
+                            <img
+                                src="/cat.jpg"
+                                alt="Trusted tax professional"
+                                className="w-full h-auto rounded-xl shadow-lg object-cover"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="py-16 lg:py-24 bg-linear-to-b from-white to-light/30 dark:from-dark dark:to-accent/20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
@@ -95,12 +136,12 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="py-16 dark:bg-primary">
+            <section className="py-16 bg-primary text-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl lg:text-4xl mb-6">
                         Ready to Get Started?
                     </h2>
-                    <p className="text-xl text-blue-100 mb-8">
+                    <p className="text-xl text-light mb-8">
                         Let's discuss how we can help your business grow. Meet with us during our office hours or schedule a free consultation today.
                     </p>
                     <Link
