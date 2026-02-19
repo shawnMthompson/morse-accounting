@@ -7,6 +7,42 @@ import { FaLongArrowAltRight, FaStar } from "react-icons/fa";
 export default function Home() {
     return (
         <div>
+            <section className="relative bg-linear-to-br from-white to-light/30 dark:from-dark dark:to-accent/20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h1 className="text-4xl lg:text-5xl mb-6 text-secondary/80">
+                                Professional Accounting & Tax Services for Individuals and Small Businesses
+                            </h1>
+                            <p className="text-xl text-light/80 mb-8">
+                                Expert financial guidance to help you thrive. From bookkeeping to tax preparation, 
+                                we've got you covered!
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <Link
+                                to="/contact"
+                                className="bg-white text-primary px-8 py-3 rounded-md hover:bg-gray-300 transition-colors text-center"
+                                >
+                                    Get Started
+                                </Link>
+                                <a
+                                href="/services"
+                                className="border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-primary transition-colors text-center"
+                                >
+                                    Our Services
+                                </a>
+                            </div>
+                        </div>
+                        <div className="hidden lg:block">
+                            <img
+                                src="/snowleopard.jpg"
+                                alt="Office"
+                                className="rounded-lg shadow-2xl"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section className="py-16 lg:py-24 bg-linear-to-b from-light/30 to-white dark:from-dark dark:to-accent/20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -61,7 +97,6 @@ export default function Home() {
                             Choose the help you need today, and scale with services that grow alongside your business.
                         </p>
                     </div>
-
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {services.slice(0, 3).map((service) => (
                             <Link
@@ -135,7 +170,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
             <section className="py-16 bg-primary text-white">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 className="text-3xl lg:text-4xl mb-6">
