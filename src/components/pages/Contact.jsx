@@ -1,8 +1,32 @@
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { useState } from 'react';
 
 export default function Contact() {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...");
+    
+    const formData = new FormData(event.target);
+    formData.append("access_key", import.meta.env.VITE_WEB3FORM_ACCESS_KEY);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    
+    if (data.success) {
+      setResult("Message sent successfully!");
+      event.target.reset();
+    } else {
+      setResult("Error sending message. Please try again.");
+    }
+  };
     return (
         <main className="min-h-screen bg-linear-to-b from-light/20 to-white dark:from-dark dark:to-accent/20">
         {/* Hero Section */}
@@ -20,17 +44,7 @@ export default function Contact() {
               <h2 className="font-bold text-3xl mb-6 text-primary dark:text-secondary">Send Us a Message</h2>
               <form
                 className="space-y-5"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  const form = e.target;
-                  if (form.checkValidity()) {
-                    alert(
-                      "Form submitted successfully... just kidding, this hasn't been implemented yet :)"
-                    );
-                  } else {
-                    alert("Please fill out all required fields correctly.");
-                  }
-                }}
+                onSubmit={onSubmit}
               >
                 <div>
                   <label className="block text-sm font-medium mb-2 text-dark dark:text-light">
@@ -39,6 +53,7 @@ export default function Contact() {
                   <input
                     className="w-full p-3 border-2 border-secondary/30 rounded-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-white dark:bg-dark dark:text-white"
                     type="text"
+                    name="name"
                     placeholder="John Doe"
                     required
                   />
@@ -50,6 +65,7 @@ export default function Contact() {
                   <input
                     className="w-full p-3 border-2 border-secondary/30 rounded-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-white dark:bg-dark dark:text-white"
                     type="email"
+                    name="email"
                     placeholder="john.doe@example.com"
                     required
                   />
@@ -61,6 +77,7 @@ export default function Contact() {
                   <input
                     className="w-full p-3 border-2 border-secondary/30 rounded-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-white dark:bg-dark dark:text-white"
                     type="tel"
+                    name="phone"
                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     placeholder="123-456-7890"
                   />
@@ -72,6 +89,7 @@ export default function Contact() {
                   <input
                     className="w-full p-3 border-2 border-secondary/30 rounded-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-white dark:bg-dark dark:text-white"
                     type="text"
+                    name="subject"
                     placeholder="Tax Consultation, Bookkeeping, etc."
                     required
                   />
@@ -82,6 +100,7 @@ export default function Contact() {
                   </label>
                   <textarea
                     className="w-full p-3 border-2 border-secondary/30 rounded-lg focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-white dark:bg-dark dark:text-white resize-none"
+                    name="message"
                     placeholder="Tell us how we can help you..."
                     rows="5"
                     required
@@ -93,6 +112,17 @@ export default function Contact() {
                 >
                   Send Message
                 </button>
+                {result && (
+                  <div className={`mt-4 p-3 rounded-lg text-center font-medium ${
+                    result.includes("successfully") 
+                      ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-200" 
+                      : result.includes("Error") 
+                      ? "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-200"
+                      : "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-200"
+                  }`}>
+                    {result}
+                  </div>
+                )}
               </form>
             </div>
 
