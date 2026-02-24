@@ -22,6 +22,12 @@ cd morse-accounting
 npm install
 ```
 
+3. Create a `.env` file at the root of the project folder and add your [web3forms key](https://web3forms.com/) for message handling
+
+```bash
+VITE_WEB3FORM_ACCESS_KEY=YOUR_KEY_HERE
+```
+
 4. Run the development server:
 
 ```bash
