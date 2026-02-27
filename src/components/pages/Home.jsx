@@ -51,11 +51,11 @@ export default function Home() {
                                 Meet Your Trusted Tax Professional
                             </h2>
                             <p className="text-lg text-dark/80 dark:text-light/80 mb-4">
-                                With over 35 years of experience in accounting and tax preparation, I'm dedicated to 
+                                With over 35 years of experience in accounting and tax preparation, Deanna is dedicated to 
                                 helping small businesses succeed through sound financial management.
                             </p>
                             <p className="text-lg text-dark/80 dark:text-light/80 mb-6">
-                                My approach is simple: understand your unique business needs, provide personalized solutions, 
+                                Her approach is simple: she'll understand your unique business needs, provide personalized solutions, 
                                 and maintain the highest standards of integrity and professionalism.
                             </p>
                             <div className="space-y-3">
