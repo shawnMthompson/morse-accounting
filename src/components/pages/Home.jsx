@@ -33,7 +33,7 @@ export default function Home() {
                                 </a>
                             </div>
                         </div>
-                        <div className="hidden lg:block">
+                        <div>
                             <img
                                 src="/sign.webp"
                                 alt="Office"

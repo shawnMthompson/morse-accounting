@@ -10,10 +10,16 @@ export default function App() {
       <div className="flex flex-col min-h-screen">
 
         <nav className="bg-primary p-4">
-          <div className="flex gap-4 justify-center">
-            <Link to="/" className="text-white hover:underline">Home</Link>
-            <Link to="/services" className="text-white hover:underline">Services</Link>
-            <Link to="/contact" className="text-white hover:underline">Contact</Link>
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
+            <Link to="/" className="flex items-center shrink-0 gap-2">
+              <img src="/logo.png" alt="Morse Accounting" className="h-8" />
+              <span className="font-semibold text-xl text-white">Morse Accounting</span>
+            </Link>
+            <div className="flex gap-4">
+              <Link to="/" className="text-white hover:underline">Home</Link>
+              <Link to="/services" className="text-white hover:underline">Services</Link>
+              <Link to="/contact" className="text-white hover:underline">Contact</Link>
+            </div>
           </div>
         </nav>
 
