@@ -35,7 +35,7 @@ export default function Home() {
                         </div>
                         <div className="hidden lg:block">
                             <img
-                                src="/snowleopard.jpg"
+                                src="/sign.webp"
                                 alt="Office"
                                 className="rounded-lg shadow-2xl"
                             />
@@ -75,7 +75,7 @@ export default function Home() {
                         </div>
                         <div className="order-1 lg:order-2">
                             <img
-                                src="/cat.jpg"
+                                src="/owner.webp"
                                 alt="Trusted tax professional"
                                 className="w-full h-auto rounded-xl shadow-lg object-cover"
                                 loading="lazy"
